@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="assets/browserconfig.xml">
+    <meta name="theme-color" content="#000000">    
+   
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to the Snow Studio">
+    <meta name="keywords" content="Snow, Snow Studio, NPCFISH, TheNPCFISH, snow, thenpcfish.github.io, mysnow.org, studio, Studio">
+    <meta name="author" content="NPCFISH">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"
+    <title>Snow Studio</title>
+    <style>
+@font-face { font-family: RHMono;src: url(https://mysnow.org/fonts/RedHatMono-Regular.ttf); font-weight: normal; }
+#out {
+    background-color: #fff;
+}
+body,div.content,html,iframe,table {
+	border: 0;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+td {
+	border: 2px solid #000;
+	height: 50%;
+	padding: 25px 5px 5px 5px;
+	position: relative;
+	vertical-align: top;
+	width: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#output {
+    background-color:white;
+}
+div.tag {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+div {
+    font-family: RHMono, monospace;
+}
+</style>
+</head>
+<body>
+<!--<button onclick="openFullscreen();">fullscreen</button>-->
+<table>
+    <tr>
+        <td>
+            <div class="tag">HTML (Body)</div>
+            <div class=content contenteditable="true" id="html"></div>
+            <td>
+                <div class="tag">CSS</div>
+                <div class="content" contenteditable="true" id="css"></div>
+                <tr>
+                    <td>
+                        <div class="tag">JavaScript</div>
+                        <div class="content" contenteditable="true" id="js"></div>
+                        <td id="out">
+                            <div class="tag">Output</div><iframe id="output"></iframe></table>
+<script>
+document.onkeydown = keydown;
+
+function keydown(e) {
+    var evtobj = window.event ? event : e;
+    if (evtobj.keyCode == 122 && evtobj.ctrlKey) {
+        openFullscreen();
+    }
+}
+function openFullscreen() {
+    var elem = document.getElementById("output");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+        }
+    }
+function changeStyle(color) {
+    document.body.style.background = color;
+}
+window.onkeydown = function( event ) {
+    if ( event.keyCode == 27 ) {
+        console.log( 'escape pressed' );
+        style = prompt("Change background style (CSS)");
+        changeStyle(style);
+    }
+}
+window.onload = function() {
+    var html = document.getElementById("html"),
+        css = document.getElementById("css"),
+        js = document.getElementById("js"),
+        output = document.getElementById("output"),
+        working = false,
+        fill = function() {
+            if (working) {
+                return false;
+            }
+            working = true;
+            var document = output.contentDocument,
+                style = document.createElement("style"),
+                script = document.createElement("script");
+            document.body.innerHTML = html.textContent;
+            style.innerHTML = css.textContent.replace(/\s/g, "");
+            script.innerHTML = js.textContent;
+            document.body.appendChild(style);
+            document.body.appendChild(script);
+            working = false;
+        };
+    html.onkeyup = fill;
+    css.onkeyup = fill;
+    js.onkeyup = fill;
+
+}
+</script>
+</body>
+</html>
