@@ -70,60 +70,7 @@ div {
                         <td id="out">
                             <div class="tag">Output</div><iframe id="output"></iframe></table>
 <script>
-document.onkeydown = keydown;
-
-function keydown(e) {
-    var evtobj = window.event ? event : e;
-    if (evtobj.keyCode == 122 && evtobj.ctrlKey) {
-        openFullscreen();
-    }
-}
-function openFullscreen() {
-    var elem = document.getElementById("output");
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-        }
-    }
-function changeStyle(color) {
-    document.body.style.background = color;
-}
-window.onkeydown = function( event ) {
-    if ( event.keyCode == 27 ) {
-        console.log( 'escape pressed' );
-        style = prompt("Change background style (CSS)");
-        changeStyle(style);
-    }
-}
-window.onload = function() {
-    var html = document.getElementById("html"),
-        css = document.getElementById("css"),
-        js = document.getElementById("js"),
-        output = document.getElementById("output"),
-        working = false,
-        fill = function() {
-            if (working) {
-                return false;
-            }
-            working = true;
-            var document = output.contentDocument,
-                style = document.createElement("style"),
-                script = document.createElement("script");
-            document.body.innerHTML = html.textContent;
-            style.innerHTML = css.textContent.replace(/\s/g, "");
-            script.innerHTML = js.textContent;
-            document.body.appendChild(style);
-            document.body.appendChild(script);
-            working = false;
-        };
-    html.onkeyup = fill;
-    css.onkeyup = fill;
-    js.onkeyup = fill;
-
-}
+var _0x669a=["\x6F\x6E\x6B\x65\x79\x64\x6F\x77\x6E","\x65\x76\x65\x6E\x74","\x6B\x65\x79\x43\x6F\x64\x65","\x63\x74\x72\x6C\x4B\x65\x79","\x6F\x75\x74\x70\x75\x74","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x72\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E","\x77\x65\x62\x6B\x69\x74\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E","\x6D\x73\x52\x65\x71\x75\x65\x73\x74\x46\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64","\x73\x74\x79\x6C\x65","\x62\x6F\x64\x79","\x65\x73\x63\x61\x70\x65\x20\x70\x72\x65\x73\x73\x65\x64","\x6C\x6F\x67","\x43\x68\x61\x6E\x67\x65\x20\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x20\x73\x74\x79\x6C\x65\x20\x28\x43\x53\x53\x29","\x6F\x6E\x6C\x6F\x61\x64","\x68\x74\x6D\x6C","\x63\x73\x73","\x6A\x73","\x63\x6F\x6E\x74\x65\x6E\x74\x44\x6F\x63\x75\x6D\x65\x6E\x74","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x73\x63\x72\x69\x70\x74","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74","","\x72\x65\x70\x6C\x61\x63\x65","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x6F\x6E\x6B\x65\x79\x75\x70"];document[_0x669a[0]]= keydown;function keydown(_0x1e81x2){var _0x1e81x3=window[_0x669a[1]]?event:_0x1e81x2;if(_0x1e81x3[_0x669a[2]]== 122&& _0x1e81x3[_0x669a[3]]){openFullscreen()}}function openFullscreen(){var _0x1e81x5=document[_0x669a[5]](_0x669a[4]);if(_0x1e81x5[_0x669a[6]]){_0x1e81x5[_0x669a[6]]()}else {if(_0x1e81x5[_0x669a[7]]){_0x1e81x5[_0x669a[7]]()}else {if(_0x1e81x5[_0x669a[8]]){_0x1e81x5[_0x669a[8]]()}}}}function changeStyle(_0x1e81x7){document[_0x669a[11]][_0x669a[10]][_0x669a[9]]= _0x1e81x7}window[_0x669a[0]]= function(_0x1e81x8){if(_0x1e81x8[_0x669a[2]]== 27){console[_0x669a[13]](_0x669a[12]);style= prompt(_0x669a[14]);changeStyle(style)}};window[_0x669a[15]]= function(){var _0x1e81x9=document[_0x669a[5]](_0x669a[16]),_0x1e81xa=document[_0x669a[5]](_0x669a[17]),_0x1e81xb=document[_0x669a[5]](_0x669a[18]),_0x1e81xc=document[_0x669a[5]](_0x669a[4]),_0x1e81xd=false,_0x1e81xe=function(){if(_0x1e81xd){return false};_0x1e81xd= true;var _0x1e81xf=_0x1e81xc[_0x669a[19]],_0x1e81x10=_0x1e81xf[_0x669a[20]](_0x669a[10]),_0x1e81x11=_0x1e81xf[_0x669a[20]](_0x669a[21]);_0x1e81xf[_0x669a[11]][_0x669a[22]]= _0x1e81x9[_0x669a[23]];_0x1e81x10[_0x669a[22]]= _0x1e81xa[_0x669a[23]][_0x669a[25]](/\s/g,_0x669a[24]);_0x1e81x11[_0x669a[22]]= _0x1e81xb[_0x669a[23]];_0x1e81xf[_0x669a[11]][_0x669a[26]](_0x1e81x10);_0x1e81xf[_0x669a[11]][_0x669a[26]](_0x1e81x11);_0x1e81xd= false};_0x1e81x9[_0x669a[27]]= _0x1e81xe;_0x1e81xa[_0x669a[27]]= _0x1e81xe;_0x1e81xb[_0x669a[27]]= _0x1e81xe}
 </script>
 </body>
 </html>
