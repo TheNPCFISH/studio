@@ -25,8 +25,12 @@
 }
 	    button {
 		    display:inline-block;
+		    position:fixed;
 		    
 	    }
+	    #n {
+		    position:fixed;
+		    left:4%;
 body,textarea.content,html,iframe,table {
 	border: 0;
 	height: 100%;
@@ -78,7 +82,7 @@ textarea {
 </style>
 </head>
 <body>
-<button onclick="openFullscreen();">fullscreen</button><button onclick="changeStyle(prompt('CSS'));">Background</button>
+<button id="n" onclick="openFullscreen();">fullscreen</button><button onclick="changeStyle(prompt('CSS'));">Background</button>
 <table>
     <tr>
         <td>
