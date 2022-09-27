@@ -10,37 +10,20 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="assets/browserconfig.xml">
     <meta name="theme-color" content="#000000">    
-   
-    <meta charset="UTF-8">
-    <meta name="description" content="Welcome to the Snow Studio">
-    <meta name="keywords" content="Snow, Snow Studio, NPCFISH, TheNPCFISH, snow, thenpcfish.github.io, mysnow.org, studio, Studio, JavaScript, js, CSS, css, HTML, html, HTM, htm, web editor, free, online, tryit, web, editor, surround, surrounding boxes, custom, customisable">
-    <meta name="author" content="NPCFISH">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"
+
+     <meta charset="UTF-8">
+     <meta name="description" content="Welcome to the Snow Studio">
+     <meta name="keywords" content="Snow, Snow Studio, NPCFISH, TheNPCFISH, snow, thenpcfish.github.io, mysnow.org, studio, Studio">
+     <meta name="keywords" content="Snow, Snow Studio, NPCFISH, TheNPCFISH, snow, thenpcfish.github.io, mysnow.org, studio, Studio, JavaScript, js, CSS, css, HTML, html, HTM, htm, web editor, free, online, tryit, web, editor, surround, surrounding boxes, custom, customisable">
+     <meta name="author" content="NPCFISH">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge"
     <title>Snow Studio</title>
     <style>
 @font-face { font-family: RHMono;src: url(https://mysnow.org/fonts/RedHatMono-Regular.ttf); font-weight: normal; }
 #out {
     background-color: #fff;
 }
-	    body, html { 
-    overflow-x: hidden; 
-    overflow-y: auto;
-		    position:fixed;
-		    font-family:RHMono,monospace;
-}
-	    button {
-		    display:inline-block;
-		    position:fixed;
-		    z-index:2;
-		    color:black;
-		    background:transparent;
-	    }
-	    #n {
-		    display:inline-block;
-		    position:fixed;
-		    left:8%;
-	    }
 body,textarea.content,html,iframe,table {
 	border: 0;
 	height: 100%;
@@ -48,10 +31,7 @@ body,textarea.content,html,iframe,table {
 	padding: 0;
 	width: 100%;
     -webkit-text-stroke-width: 0px;
-	    }
-body {
-	position:fixed;
-	    }
+}
 td {
 	border: 2px solid #000;
 	height: 50%;
@@ -68,7 +48,7 @@ div.tag {
 	right: 5px;
 	top: 5px;
 }
-div,button {
+div {
     font-family: RHMono, monospace;
 }
 #out,td{
@@ -83,22 +63,19 @@ td,textarea{
 textarea {
     resize: none;
     background-color:transparent;
-    z-index:1;
-	height:100%;
-	width:100%;
 }
 </style>
 </head>
 <body>
-<button id="n" onclick="openFullscreen();">fullscreen</button><button onclick="changeStyle(prompt('CSS'));">Background</button>
+<!--<button onclick="openFullscreen();">fullscreen</button>-->
 <table>
     <tr>
         <td>
             <div class="tag">HTML (Body)</div>
-            <textarea id="m" class=content id="html"></textarea>
+            <textarea class=content id="html"></textarea>
             <td>
                 <div class="tag">CSS</div>
-                <textarea id="m" class="content" id="css"></textarea>
+                <textarea class="content" id="css"></textarea>
                 <tr>
                     <td>
                         <div class="tag">JavaScript</div>
